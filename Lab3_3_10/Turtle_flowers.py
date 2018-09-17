@@ -17,7 +17,7 @@ for i in range(n):
     buff = flow[i][1].split(':')
     if time_get > (int(buff[0])*60 + int(buff[1])):
         distance += flower_d
-        time += flower_d / v_max + eat_time
+        time += flower_d / v_max  + eat_time
     else:
         distance += flower_d
         time += int(buff[0])*60 + int(buff[1]) + eat_time
@@ -25,10 +25,6 @@ for i in range(n):
 time += distance/v_max
 print(time)
 out = open('output2.txt', 'w')
-min_left = time-(time//60)*60
-if min_left != round(min_left):
-    min_left = round(min_left)
-time_cor = str(int(time//60))+':'+str(min_left)
-if int(time-(time//60)*60) < 10:
-    time_cor = str(int(time // 60)) + ':' + '0' + str(min_left)
-out.write(str(time_cor))
+time = str(round(time//60)) + ':' + str(round(time % 60))
+print(time)
+out.write(time)
