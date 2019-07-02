@@ -24,12 +24,12 @@ def bubble_sort_mod(array):
     i = 0
     while i < n:
         bl = True
-        if i%2 == 0:
+        if i % 2 == 0:
             for j in range(n - i - 1):
                 if a[j] > a[j + 1]:
                     a[j], a[j + 1] = a[j + 1], a[j]
                     bl = False
-        if i%2 == 1:
+        if i % 2 == 1:
             for j in range(n - i, 0, -1):
                 if a[j] < a[j - 1]:
                     a[j], a[j - 1] = a[j - 1], a[j]
@@ -217,6 +217,7 @@ def partition(array, first, last):
 
 if __name__ == "__main__":
     a = [random.randrange(1000) for i in range(10000)]
+    print(a)
     bubble_sort(a)
     bubble_sort_mod(a)
     selection_sort(a)
